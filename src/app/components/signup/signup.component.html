@@ -1,0 +1,177 @@
+<div class="features">
+  <div class="counter ">
+    <div class="counter_background " style="background-image:url(assets/images/counter_background.jpg)"></div>
+    <div class="container ">
+      <div class="row">
+        <div class="col-lg-6">
+          <div class="counter_content">
+            <h2 class="counter_title">Register Now</h2>
+            <div class="counter_text">
+              <p>Simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry’s
+                standard dumy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it
+                to make a type specimen book.</p>
+            </div>
+
+            <!-- Milestones -->
+
+            <div class="milestones d-flex flex-md-row flex-column align-items-center justify-content-between">
+
+              <!-- Milestone -->
+              <div class="milestone">
+                <div class="milestone_counter" data-end-value="15">0</div>
+                <div class="milestone_text">years</div>
+              </div>
+
+              <!-- Milestone -->
+              <div class="milestone">
+                <div class="milestone_counter" data-end-value="120" data-sign-after="k">0</div>
+                <div class="milestone_text">years</div>
+              </div>
+
+              <!-- Milestone -->
+              <div class="milestone">
+                <div class="milestone_counter" data-end-value="670" data-sign-after="+">0</div>
+                <div class="milestone_text">years</div>
+              </div>
+
+              <!-- Milestone -->
+              <div class="milestone">
+                <div class="milestone_counter" data-end-value="320">0</div>
+                <div class="milestone_text">years</div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="counter_form">
+        <div class="row fill_height">
+          <div class="col fill_height">
+
+            <form class="counter_form_content d-flex flex-column align-items-center justify-content-center"
+              [formGroup]='signupForm'>
+              <div class="counter_form_title" style="margin-top: 20px;">Register</div>
+
+              <input type="text" class="counter_input" placeholder="First Name" formControlName="firstName">
+              <div
+                *ngIf="signupForm.controls['firstName'].invalid &&(signupForm.controls['firstName'].dirty|| signupForm.controls['firstName'].touched)">
+                <div *ngIf="signupForm.controls['firstName'].errors.required" class="text-danger">
+                  firstName is required
+                </div>
+                <div *ngIf="signupForm.controls['firstName'].errors.minlength" class="text-danger">
+                  firstName must be at least 6 characters
+                </div>
+                <div *ngIf="signupForm.controls['firstName'].errors.maxlength" class="text-danger">
+                  firstName should be at most 12 characters
+                </div>
+              </div>
+              <input type="tel" class="counter_input" placeholder="Last Name" formControlName="lastName">
+              <div
+                *ngIf="signupForm.controls['lastName'].invalid &&(signupForm.controls['lastName'].dirty|| signupForm.controls['lastName'].touched)">
+                <div *ngIf="signupForm.controls['lastName'].errors.required" class="text-danger">
+                  Last Name is required
+                </div>
+                <div *ngIf="signupForm.controls['lastName'].errors.minlength" class="text-danger">
+                  Last Name must have at least 4 characters
+                </div>
+              </div>
+              <input type="tel" class="counter_input" placeholder="Email" formControlName="email">
+
+              <div
+                *ngIf="signupForm.controls['email'].invalid &&(signupForm.controls['email'].dirty|| signupForm.controls['email'].touched)">
+                <div *ngIf="signupForm.controls['email'].errors.required" class="text-danger">
+                  Email is required
+                </div>
+                <div *ngIf="signupForm.controls['email'].errors.email" class="text-danger">
+                  Email invalid
+                </div>
+              </div>
+              <input type="password" class="counter_input" placeholder="Password" formControlName="password">
+
+              <div
+                *ngIf="signupForm.controls['password'].invalid &&(signupForm.controls['password'].dirty|| signupForm.controls['password'].touched)">
+                <div *ngIf="signupForm.controls['password'].errors.required" class="text-danger">
+                  Password is required
+                </div>
+                <div *ngIf="signupForm.controls['password'].errors.minlength" class="text-danger">
+                  Password must be at least 8 characters
+                </div>
+                <div *ngIf="signupForm.controls['password'].errors.maxlength" class="text-danger">
+                  Password should be at most 12 characters
+                </div>
+              </div>
+              <input type="tel" class="counter_input" placeholder="Cin" formControlName="cin">
+
+              <div
+                *ngIf="signupForm.controls['cin'].invalid &&(signupForm.controls['cin'].dirty|| signupForm.controls['cin'].touched)">
+                <div *ngIf="signupForm.controls['cin'].errors.required" class="text-danger">
+                  Cin is required
+                </div>
+                <div *ngIf="signupForm.controls['cin'].errors.minlength" class="text-danger">
+                  Cin must be at least 8 numbers
+                </div>
+                <div *ngIf="signupForm.controls['cin'].errors.maxlength" class="text-danger">
+                  Cin should be at most 8 numbers
+                </div>
+
+              </div>
+              <input type="tel" class="counter_input" placeholder="Tel" formControlName="tel">
+              <div
+                *ngIf="signupForm.controls['tel'].invalid &&(signupForm.controls['tel'].dirty|| signupForm.controls['tel'].touched)">
+                <div *ngIf="signupForm.controls['tel'].errors.required" class="text-danger">
+                  Tel is required
+                </div>
+                <div *ngIf="signupForm.controls['tel'].errors.minlength" class="text-danger">
+                  Tel must be at least 8 numbers
+                </div>
+                <div *ngIf="signupForm.controls['tel'].errors.maxlength" class="text-danger">
+                  Tel should be at most 8 numbers
+                </div>
+              </div>
+              <select name="counter_select" formControlName="gender" id="counter_select" class="counter_input counter_options">
+                <option>Choose </option>
+                <option>Homme</option>
+
+                <option>Femme</option>
+
+              </select>
+
+              <input *ngIf="isDisplayed" type="tel" class="counter_input" placeholder="Speacialite"
+                formControlName="specialite">
+
+              <div
+                *ngIf="signupForm.controls['specialite'].invalid &&(signupForm.controls['specialite'].dirty|| signupForm.controls['specialite'].touched)">
+                <div *ngIf="signupForm.controls['specialite'].errors.required" class="text-danger">
+                  Specialite is required
+                </div>
+                <div *ngIf="signupForm.controls['specialite'].errors.minlength" class="text-danger">
+                  specialite must be at least 6 characters
+                </div>
+                <div *ngIf="signupForm.controls['specialite'].errors.maxlength" class="text-danger">
+                  specialite should be at most 12 characters
+                </div>
+              </div>
+              <div>
+                <img [src]="imagePreview" alt="" height="50px" width="50px">
+
+                <div style="visibility:hidden">
+                  <input type="file" class="btn btn-primary py-1 px-10" #filePicker (change)='onImageSelected($event)'>
+                </div>
+                <div>
+                  <button type="button" class="btn btn-secondary py-1 px-10 text-center"
+                    (click)="filePicker.click()">Please Choose
+                    File</button>
+                </div>
+
+                <button type="submit" class="counter_form_button" (click)="signup(signupForm.value)">submit now</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

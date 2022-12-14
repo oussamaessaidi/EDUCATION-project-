@@ -1,0 +1,32 @@
+<div class="home">
+    <div class="counter_background" style="background-image:url(assets/images/counter_background.jpg)"></div>
+    <div class="container">
+        <div style="margin: 150px;">
+            <div>
+                <div class="col fill_height">
+                    <ul class="nav nav-tabs" id="myTab" role="tablist" style="margin-top: 50px;">
+                        <li class="nav-item">
+                            <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab"
+                                aria-controls="home" aria-selected="true">My Courses</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab"
+                                aria-controls="profile" aria-selected="false">My Events</a>
+                        </li>
+                    </ul>
+                    <div class="tab-content" id="myTabContent">
+
+                        <div class="tab-pane fade show active" id="home" *ngFor="let c of courses" role="tabpanel"
+                            aria-labelledby="home-tab">
+                            <app-course [X]="c"></app-course>
+                        </div>
+                        <div class="tab-pane fade" id="profile" *ngFor="let e of events" role="tabpanel"
+                            aria-labelledby="profile-tab">
+                            <app-event [Y]="e"></app-event>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

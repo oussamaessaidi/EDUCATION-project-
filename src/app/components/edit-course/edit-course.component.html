@@ -1,0 +1,25 @@
+<div class="counter" style="margin-top: 10%;">
+    <div class="counter_background" style="background-image:url(assets/images/counter_background.jpg)"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4"></div>
+            <div class="col-lg-4">
+                <div class="counter_content">
+                    <h2 class="counter_title mb-3 text-center"> Edit Course</h2>
+                    <form (ngSubmit)="addOrEditCourse()" #courseForm="ngForm">
+                        <div class="form-group">
+                            <input type="text" class="form-control" [(ngModel)]="course.course.professor" [ngModelOptions]="{standalone: true}" placeholder="Professor">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" [(ngModel)]="course.course.duration" [ngModelOptions]="{standalone: true}" placeholder="Duration">
+                        </div>
+                        <div class="form-group">
+                            <input type="number" class="form-control" [(ngModel)]="course.course.price" [ngModelOptions]="{standalone: true}" placeholder="Price">
+                        </div>
+                        <button type="submit" class="counter_form_button">edit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

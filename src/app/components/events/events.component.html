@@ -1,0 +1,18 @@
+<div class="events">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <div class="section_title_container text-center">
+                    <h2 class="section_title">Upcoming events</h2>
+                </div>
+            </div>
+        </div>
+        <div class="row events_row">
+
+            <!-- Event -->
+            <div *ngFor="let e of events" class="col-lg-4 event_col">
+                <app-event [Y]="e"></app-event>
+            </div>
+        </div>
+    </div>
+</div>

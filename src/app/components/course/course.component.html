@@ -1,0 +1,19 @@
+<div class="course">
+    <div class="course_image"><img src="assets/images/course_1.jpg" alt=""></div>
+    <div class="course_body">
+        <h3 class="course_title"><a href="course.html">{{X.courseName}}</a></h3>
+        <div class="course_teacher">{{X.professor}}</div>
+        <div class="course_text">
+            <p>{{X.duration}}</p>
+        </div>
+    </div>
+    <div class="course_footer">
+        <div class="course_footer_content d-flex flex-row align-items-center justify-content-start">
+            <div class="course_info">
+                <i class="fa fa-graduation-cap" aria-hidden="true"></i>
+            </div>
+            <button class="btn btn-success" style="margin-left: 20%;" (click)="addtoBasket(X._id, X.professor)" *ngIf="isStudent">Participate</button>
+            <div class="course_price ml-auto">${{X.price}}</div>
+        </div>
+    </div>
+</div>

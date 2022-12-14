@@ -1,0 +1,22 @@
+<div class="counter" style="margin-top: 10%;">
+    <div class="counter_background" style="background-image:url(assets/images/counter_background.jpg)"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4"></div>
+            <div class="col-lg-4">
+                <div class="counter_content">
+                    <h2 class="counter_title mb-3 text-center"> Event Form</h2>
+                    <form #eventForm="ngForm" (ngSubmit)="addOrEditEvent()">
+                        <input type="text" class="counter_input" placeholder="Name" #eventName="ngModel"
+                            [(ngModel)]="newEvent.eventName" name="event">
+                        <textarea type="text" class="counter_input counter_text_input" placeholder="Location"
+                            [(ngModel)]="newEvent.duration" #duration="ngModel" name="duration"></textarea>
+                        <input type="text" class="counter_input" #professor="ngModel" placeholder="professor"
+                            [(ngModel)]="newEvent.professor" name="professor">
+                        <button type="submit" class="counter_form_button">ADD</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,30 @@
+<div class="counter" style="margin-top: 10%;">
+    <div class="counter_background" style="background-image:url(assets/images/counter_background.jpg)"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4"></div>
+            <div class="col-lg-4">
+                <div class="counter_content">
+                    <h2 class="counter_title mb-3 text-center"> {{title}}</h2>
+                 
+                    <form class="counter_form_content d-flex flex-column align-items-center justify-content-center" #couseForm="ngForm" (ngSubmit)="addOrEditcourse()">
+                  
+                        <input #courseName="ngModel" type="text" class="counter_input" placeholder="Name" [(ngModel)]="course.courseName" name="courseName"  >
+                        <input #price="ngModel" type="number" class="counter_input" placeholder="Price"  [(ngModel)]="course.price" name="price">
+                        <input #professor="ngModel" type="text" class="counter_input" placeholder="professor" [(ngModel)]="course.professor" name="professor">         
+                        <input #duration="ngModel" type="text" class="counter_input" placeholder="duration" [(ngModel)]="course.duration" name="duration" >
+                        <button type="submit" class="counter_form_button">ADD</button>
+                       
+                    </form>
+
+                   
+                </div>
+
+            </div>
+        </div>
+
+       
+
+    </div>
+</div>
+

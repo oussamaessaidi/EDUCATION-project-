@@ -1,0 +1,30 @@
+<div class="home">
+    <div class="counter_background" style="background-image:url(assets/images/counter_background.jpg)"></div>
+    <div class="container">
+        <div style="margin: 150px;">
+            <div>
+                <div class="col fill_height">
+                    <ul class="nav nav-tabs" id="myTab" role="tablist" style="margin-top: 50px;">
+                        <li class="nav-item">
+                          <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Courses</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Events</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" id="profile-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="profile" aria-selected="false">Users</a>
+                        </li>
+                      </ul>
+                      <div class="tab-content" id="myTabContent">
+                        
+                        <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab"><app-courses-table></app-courses-table></div>
+                        <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab"><app-events-table></app-events-table></div>
+                        <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab"><app-users-table></app-users-table></div>
+                      </div>  
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+ 

@@ -1,0 +1,141 @@
+<header class="header">
+
+    <!-- Header Content -->
+    <div class="header_container">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <div class="header_content d-flex flex-row align-items-center justify-content-start">
+                        <div class="logo_container">
+                            <a routerLink="Home">
+                                <div class="logo_text">Edu<span>free</span></div>
+                            </a>
+                        </div>
+                        <nav class="main_nav_contaner ml-auto">
+                            <ul class="main_nav">
+                                <li class="active"><a routerLink="Home">Home</a></li>
+                                <li><a routerLink="events">Events</a></li>
+                                <li><a routerLink="courses">Courses</a></li>
+                                <li><a routerLink="best-tutors">Tutors</a></li>
+                                <li><a routerLink="login">Login</a></li>
+                                <li><a id="dropdownMenu2" data-toggle="dropdown">Signup</a>
+                                    <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                                        <button class="dropdown-item" type="button"><a
+                                                routerLink="signup/teacher">Teacher</a></button>
+                                        <button class="dropdown-item" type="button"><a
+                                                routerLink="signup/student">Student</a></button>
+
+                                    </div>
+                                </li>
+                                <li routerLinkActive="active">
+                                    <div class="dropdown" *ngIf="headerTutor">
+                                        <button class="btn  dropdown-toggle" type="button" id="dropdownMenu2"
+                                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            My Space
+                                        </button>
+                                        <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                                            <!-- <button class="dropdown-item" type="button"><a routerLink="addCourse">Courses</a></button> -->
+
+                                            <button class="dropdown-item" type="button"><a
+                                                    routerLink="teacher/myReservations">Dashboard</a></button>
+
+                                            <button class="dropdown-item" type="button"><a
+                                                    routerLink="add-course">Add Course</a></button>
+                                            <button class="dropdown-item" type="button"><a
+                                                    routerLink="add-event">Add Event</a></button>
+                                        </div>
+                                        <div>
+                                             <a *ngIf="!isdisplayed" (click)="logout()">Logout</a></div>
+                                    </div>
+                                </li>
+                                <li routerLinkActive="active">
+                                    <div class="dropdown" *ngIf="headerUser">
+                                        <button class="btn  dropdown-toggle" type="button" id="dropdownMenu2"
+                                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            My Student Space
+                                        </button>
+                                        <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+
+
+                                            <button class="dropdown-item" type="button"><a
+                                                    routerLink="student/myReservations">Dashboard</a></button>
+
+                                        </div>
+                                        <div>
+                                            <a *ngIf="!isdisplayed" (click)="logout()">Logout</a></div>
+                                    </div>
+                                </li>
+
+                                <li routerLinkActive="active" *ngIf="headerAdmin">
+                                    <div class="dropdown">
+                                        <button class="btn  dropdown-toggle" type="button" id="dropdownMenu2"
+                                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            My Admin Space
+                                        </button>
+                                        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                            <a class="dropdown-item" routerLink="add-event">Add Event</a>
+                                            <a class="dropdown-item" routerLink="admin">Dashboard</a>
+                                        </div>
+                                    </div>
+                                    
+                                </li>
+                                <li><a *ngIf="!isdisplayed"> Welcome {{users.fName}} {{users.lName}} <img class="avatar"
+                                            [src]="users.img" alt=""> </a> </li>
+                            </ul>
+                            <div class="hamburger menu_mm">
+                                <i class="fa fa-bars menu_mm" aria-hidden="true"></i>
+                            </div>
+                        </nav>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header Search Panel -->
+    <div class="header_search_container">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <div class="header_search_content d-flex flex-row align-items-center justify-content-end">
+                        <form action="#" class="header_search_form">
+                            <input type="search" class="search_input" placeholder="Search" required="required">
+                            <button
+                                class="header_search_button d-flex flex-column align-items-center justify-content-center">
+                                <i class="fa fa-search" aria-hidden="true"></i>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Menu -->
+
+<div class="menu d-flex flex-column align-items-end justify-content-start text-right menu_mm trans_400">
+    <div class="menu_close_container">
+        <div class="menu_close">
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+    <div class="search">
+        <form action="#" class="header_search_form menu_mm">
+            <input type="search" class="search_input menu_mm" placeholder="Search" required="required">
+            <button class="header_search_button d-flex flex-column align-items-center justify-content-center menu_mm">
+                <i class="fa fa-search menu_mm" aria-hidden="true"></i>
+            </button>
+        </form>
+    </div>
+    <nav class="menu_nav">
+        <ul class="menu_mm">
+            <li class="menu_mm"><a routerLink="Home">Home</a></li>
+            <li class="menu_mm"><a routerLink="admin">Admin</a></li>
+            <li class="menu_mm"><a routerLink="courses">Courses</a></li>
+            <li class="menu_mm"><a routerLink="events">Events</a></li>
+        </ul>
+    </nav>
+</div>

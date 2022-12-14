@@ -1,0 +1,60 @@
+<div class=" home">
+    <div class="counter_background" style="background-image:url(assets/images/counter_background.jpg)"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="counter_content">
+                    <h2 class="counter_title">Login Now</h2>
+                    <div class="counter_text">
+                    </div>
+                    <!-- Milestones -->
+                    <div class="milestones d-flex flex-md-row flex-column align-items-center justify-content-between">
+                        <!-- Milestone -->
+                        <div class="milestone">
+                            <div class="milestone_counter" data-end-value="15">0</div>
+                            <div class="milestone_text">years</div>
+                        </div>
+                        <!-- Milestone -->
+                        <div class="milestone">
+                            <div class="milestone_counter" data-end-value="120" data-sign-after="k">0</div>
+                            <div class="milestone_text">years</div>
+                        </div>
+                        <!-- Milestone -->
+                        <div class="milestone">
+                            <div class="milestone_counter" data-end-value="670" data-sign-after="+">0</div>
+                            <div class="milestone_text">years</div>
+                        </div>
+                        <!-- Milestone -->
+                        <div class="milestone">
+                            <div class="milestone_counter" data-end-value="320">0</div>
+                            <div class="milestone_text">years</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="counter_form">
+            <div class="row fill_height">
+                <div class="col fill_height">
+                    <form  name="form" (ngSubmit)="f.form.valid && login()"  #f="ngForm" class="counter_form_content d-flex flex-column align-items-center justify-content-center" >
+                        <img src="/assets/images/latest_1.jpg" alt=""  style="width: 300px" >
+                        <!-- <div class="counter_form_title">Login</div> -->
+                        <div class="row input-group custom" style="margin-bottom: 10px" >
+                            <input type="text" class="counter_input" placeholder="cin" name="cin" [(ngModel)]="user.cin" #cin="ngModel" [ngClass]="{ 'isinvalid': f.submitted && cin.invalid }" required cin />
+                            <div *ngIf="f.submitted && cin.invalid" class="invalidfeedback">
+                                <div *ngIf="cin.errors.required">Cin is required</div>
+                                </div>  								
+                        </div>						
+                        <div class="input-group custom"  style="margin-bottom: 8px">
+                            <input type="password" class="counter_input"  placeholder="**********" name="password" [(ngModel)]="user.password" #password="ngModel" [ngClass]="{ 'isinvalid': f.submitted && password.invalid }" required password />
+                            <div *ngIf="f.submitted && password.invalid" class="invalidfeedback">
+                                <div *ngIf="password.errors.required">Password is required</div>
+                                </div>  							
+                        </div>					
+                        <button type="submit" class="counter_form_button">submit now</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
